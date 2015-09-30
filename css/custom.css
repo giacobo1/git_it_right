@@ -9,3 +9,16 @@
 	margin-top: -250px;
 	box-shadow: none;
 }
+
+
+#sacomplogo {
+	height: auto;
+	width: auto;
+	max-width: 440px;
+	max-height: 80px;
+	border: 0;
+	position: absolute;
+	margin-bottom: 0px;
+	margin-left: -220px;
+	box-shadow: none;
+}
