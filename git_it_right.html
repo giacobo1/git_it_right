@@ -101,16 +101,18 @@
 
 				<section>
 					<h2>VCS Locais</h2>
-					<p>No início, utilizava-se mecanismos como cópias em arquivos com nomes significativos. Essa abordagem, porém era ineficiente e suscetível a erros.</p>
+					<p>No início, utilizava-se mecanismos como cópias em arquivos com nomes significativos. Essa abordagem, porém, era ineficiente e suscetível a erros.</p>
 				</section>
 
 				<section>
+					<h2>Automatizar o Processo</h2>
 					<p>
-						Havia a necessidade, então, do desenvolvimento de um sistema que gerenciasse diferentes versões de arquivos.
+						Havia a necessidade, então, de um sistema que gerenciasse diferentes versões de arquivos.
 					</p>
 				</section>
 
 				<section>
+					<h2>RCS e Patches</h2>
 					<p>
 						Nesse sentido, RCS VCS foi um dos primeiros a se popularizar. Esse sistema gerava patches (diferenças entre versões de arquivos) e os guardava em um formato especial no disco.
 					</p>
@@ -121,21 +123,109 @@
 					<p>Devido a complexidade crescente que alguns projetos apresentavam, a demanda por meios de colaborar surgiu e passou a ser incorporado por VCSs.</p>
 				</section>
 
+				<section>
+					<h2>VCS Centralizados</h2>
+					<p>Surgem, então, os primeiros VCS centralizados. Esses sistemas guardam todas as versões de arquivos em um servidor central.</p>
+				</section>
 
 				<section>
-					<h2>Introdução</h2>
-					<p>Texto</p>
+					<h2>VCS Centralizados</h2>
+					<p>Antes do aparecimento do Git, VCS centralizados eram o padrão de fato.</p>
 				</section>
 
 
 				<section>
-					<h2>Conceitos Fundamentais</h2>
-					<p>Texto</p>
+					<h2>Exemplos de VCS Centralizados</h2>
+					
+					<ul>
+						<li>CVS</li>
+						<li>Subversion</li>
+						<li>Perforce</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Desvantagens dos VCS Centralizados</h2>
+					<ul>
+						<li>Intolerância a falhas
+							<ul>
+								<li>Servidor</li>
+								<li>Disco Rígido</li>
+								<li>Conexão Com a Rede</li>
+							</ul>
+						</li>						
+						<li>Inflexível</li>
+						<li>Lento</li>
+						<li>Sem Isolamento</li>
+					</ul>
+
+				</section>
+
+				<section>
+					<h2>VCSs Distribuídos</h2>
+					<p>Para contrapor os problemas apresentados por VCSs centralizados, surgem os VCS que operam de forma distribuída.</p>
+				</section>
+
+				<section>
+					<h2>VCS Distribuídos</h2>
+					<p>Nesse tipo de VCS, cada desenvolvedor do projeto possui uma cópia local completa do projeto. Isso não só torna trivial a recuperação de eventuais falhas, como também possibilita diversas estratégias de colaboração (mais em Workflows).</p>
+				</section>
+
+				<section>
+					<h2>Exemplos de VCSs Distribuídos</h2>
+					<ul>
+						<li>Git</li>
+						<li>Mercurial</li>
+						<li>Bazaar</li>
+						<li>Darcs</li>
+					</ul>
 				</section>
 
 
 				<section>
-					<h2>Costumizações</h2>
+					<h2>Como Surgiu o Git</h2>
+					<p>Até 2002, o desenvolvimento do kernel Linux era administrado por meio de patches arquivados em disco e e-mails. No ano seguinte, a comunidade de desenvolvodores decidiu migrar para um DVCS chamado BitKeeper.</p>
+				</section>
+
+				<section>
+					<h2>Como Surgiu o Git</h2>
+					<p>
+						Após desentendimentos entre a comunidade de desenvolvedores do kernel Linux e a BitKeeper em 2005, a comunidade decidiu abandonar o uso desse serviço e implementar seu próprio VCS.
+					</p>
+				</section>
+
+				<section>
+					<h2>Como Surgiu o Git</h2>
+					<p>Para acomodar adequadamente projetos de grande escala como o kernel Linux, o novo VCS deveria atender as seguintes exigências:</p>
+
+					<ul>
+						<li>Velocidade</li>
+						<li>Simplicidade</li>
+						<li>Suporte a fluxo não linear de desenvolvimento</li>
+						<li>Totalmente Distribuído</li>
+						<li>Capaz de lidar com grande volume de dados</li>
+					</ul>
+
+					<p>Assim surgia, em 2005, um VCS chamado Git.</p>
+
+				</section>
+
+
+
+				<section>
+					<h1>Introdução</h1>
+					
+				</section>
+
+
+				<section>
+					<h1>Conceitos Fundamentais</h1>
+					
+				</section>
+
+
+				<section>
+					<h1>Costumizações</h1>
 
 					<p>
 					<pre style="text-align:center;"><code>$ git config --global user.name "foo"</code></pre>
@@ -144,44 +234,44 @@
 
 
 				<section>
-					<h2>Trabalhando Localmente</h2>
-					<p>Texto</p>
+					<h1>Trabalhando Localmente</h1>
+					
 				</section>
 
 
 				<section>
-					<h2>Branches</h2>
-					<p>Texto</p>
+					<h1>Branches</h1>
+					
 				</section>
 
 
 				<section>
-					<h2>Trabalhando Remotamente</h2>
-					<p>Texto</p>
+					<h1>Trabalhando Remotamente</h1>
+					
 				</section>
 
 
 				<section>
-					<h2>Conflitos</h2>
-					<p>Texto</p>
+					<h1>Conflitos</h1>
+					
 				</section>
 
 
 				<section>
-					<h2>Workflows</h2>
-					<p>Texto</p>
+					<h1>Workflows</h1>
+					
 				</section>
 
 
 				<section>
-					<h2>Analisando Logs</h2>
-					<p>Texto</p>
+					<h1>Analisando Logs</h1>
+					
 				</section>
 
 
 				<section>
-					<h2>Referências</h2>
-					<p>Texto</p>
+					<h1>Referências</h1>
+					
 				</section>
 
 
