@@ -22,3 +22,40 @@
 	margin-left: -220px;
 	box-shadow: none;
 }
+
+
+#github-logo {
+	max-height: 130px;
+	position: absolute;
+	box-shadow: none;
+	height: auto;
+	width: auto;
+	float: left;
+	margin-top: 55px;
+	margin-bottom: 0px;
+	margin-left: -510px;
+}
+
+#bitbucket-logo {
+	max-height: 130px;
+	position: absolute;
+	box-shadow: none;
+	height: auto;
+	width: auto;
+	float: center;
+	margin-top: 55px;
+	margin-bottom: 0px;
+	margin-left: -165px;
+}
+
+#gitlab-logo {
+	max-height: 130px;	
+	position: absolute;
+	box-shadow: none;
+	height: auto;
+	width: auto;
+	float: left;
+	margin-top: 55px;
+	margin-bottom: 0px;
+	margin-left: 250px;
+}
