@@ -74,7 +74,6 @@
 					<ul>
 						<li>Histórico</li>
 						<li>Introdução</li>
-						<li>Iniciando</li>
 						<li>Conceitos Fundamentais</li>
 						<li>Trabalhando Localmente</li>
 						<li>Branchs</li>
@@ -253,9 +252,71 @@
 					<img src="images/github_logo.jpg" height="143" width="351" id="github-logo">
 					<img src="images/bitbucket_logo.png" height="129" width="389" id="bitbucket-logo">
 					<img src="images/gitlab_logo.png" height="177" width="284" id="gitlab-logo">
+				</section>
+
+
+				<section>
+					<h2>Instalando o Git no Linux</h2>
+					<p>Via gerenciador de pacotes no Fedora:<br>
+					<pre style="text-align:center;"><code>$ sudo yum install git</code></pre>
+					</p>
+					<p>Via gerenciador de pacotes em sistemas Debian-like:<br>
+					<pre style="text-align:center;"><code>$ sudo apt-get install git</code></pre>
+					</p>
+					<p>Outros meios de instalações em: <br><a href="http://git-scm.com/download/"></a>http://git-scm.com/download/</p>
+				</section>
+
+				<section>
+					<h2>Configurações do Git</h2>
+					<p>
+						Git possui 3 níveis de configurações que são manipulados pela ferramenta <b>config</b> da seguinte forma:						
+					</p>
+
+					<p>- Configurações do Git para todos os usuários do sistema<br>
+					<pre style="text-align:center;"><code>$ git config --system Atributo "Valor" </code></pre>
+					</p>
+					<p>- Configurações do Git específicas a um usuário<br>
+					<pre style="text-align:center;"><code>$ git config --global Atributo "Valor" </code></pre>
+					</p>
+					<p>- Configurações do Git específicas ao repositório do projeto<br>
+					<pre style="text-align:center;"><code>$ git config --local Atributo "Valor" </code></pre>
+					</p>
+				</section>
+
+
+				<section>
+					<h2>Configurações do Git</h2>
+					<p>
+						Adicionando credenciais pela primeira vez:
+						<pre style="text-align:center;"><code>$ git config --global user.name "Chuck Norris"</code></pre> 
+						<pre style="text-align:center;"><code>$ git config --global user.email cnorris@mercenaries.com </code></pre>
+						<pre style="text-align:center;"><code>$ git config --global core.editor "vim" </code></pre>
+						<pre style="text-align:center;"><code>$ git config --global core.ui auto</code></pre>
+					</p>
+					
+					<aside class="notes">
+						<p>
+							Explicar os atributos. I.E: core.editor
+						</p>	
+					</aside>
 
 				</section>
 
+				<section>
+					<h2>Obtendo Ajuda</h2>
+					Caso você esqueça algum comando, há diversas formas de obter ajuda.
+
+					<pre style="text-align:center;"><code>$ git help verb</code></pre>
+					<pre style="text-align:center;"><code>$ git verb --help</code></pre>
+					<pre style="text-align:center;"><code>$ main git-verb</code></pre>
+
+					<aside class="notes">
+						<p>
+							Explicar sobre tab
+						</p>	
+					</aside>
+
+				</section>
 
 
 				<section>
