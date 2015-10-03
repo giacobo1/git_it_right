@@ -60,3 +60,11 @@
 	margin-left: 250px;
 }
 
+#repo-states {
+	box-shadow: none;
+	border: 0px;
+}
+
+#hash1 {
+	color: #FF6600;
+}

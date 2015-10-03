@@ -252,6 +252,11 @@
 					<img src="images/github_logo.jpg" height="143" width="351" id="github-logo">
 					<img src="images/bitbucket_logo.png" height="129" width="389" id="bitbucket-logo">
 					<img src="images/gitlab_logo.png" height="177" width="284" id="gitlab-logo">
+
+					<aside class="notes" >
+						<p>Lembrar da importancia dos Hubs hoje em dai.</p>
+					</aside>
+
 				</section>
 
 
@@ -324,13 +329,90 @@
 					
 				</section>
 
+				<section>
+					<h2>O que é um repositório?</h2>
+					<p>
+						Um repositório é um diretório comum cujos arquivos e subdiretórios são de conhecimento do Git. Dessa forma, tudo que for manipulado nesse diretório está sujeito a versionamento pelo Git.
+					</p>					
+
+				</section>	
 
 				<section>
-					<h1>Costumizações</h1>
+					<h2>O que é um repositório?</h2>
+					<p>
+						Pode-se dizer que um repositório é a representação do projeto em disco gerenciada pelo Git. Repositórios podem ser locais ou remotos. 
+					</p>
+				</section>
+
+				<section>
+					<h2>A Pasta .git/</h2>
+					<p>
+						Em cada repositório, o Git cria uma pasta "oculta". Nesse diretório são armazenados a base de dados que contém as versões de arquivos que o Git administra, bem como outros <b>objetos</b> importantes. Todos os repositórios clones são construídos usando essa pasta.
+					</p>
+				</section>
+
+				<section>
+					<h2>Os 3 Estados de um Repositório</h2>
+
+					<img src="images/repo_states.png" height="396" width="686" id="repo-states">
+
+
+					<aside class="notes">
+						<p>
+							Chamar atenção para essa parte.
+						</p>	
+					</aside>
+				</section>
+
+				<section>
+					<h2>Os 3 Estados de um Repositório</h2>
+					<ul>
+						<li>Working Directory: É o diretório gerenciado pelo Git. Todos os arquivos dentro desse diretório <b>podem</b> ser registrados na base de dados do Git.</li>
+						<li>Staging Area: Também chamado de index. Pode ser visto como o conjunto de mudanças <b>que se quer</b> gravar no repositório.</li>
+						<li>Repository: O histórico ou conjunto de versões do projeto</li>
+					</ul>
+				</section>				
+
+
+
+				<section>
+					<h2>Snapshots</h2>
 
 					<p>
-					<pre style="text-align:center;"><code>$ git config --global user.name "foo"</code></pre>
+					Cada variação entre versões é considerada uma imagem parcial ou "snapshot" do estado atual do projeto. Esses snapshots são adicionados à staging area para serem registrados no repositório.
 					</p>
+				</section>
+
+				<section>
+					<h2>Snapshots</h2>
+					<p>
+						Estes snapshots são gerados usando-se uma soma de verificação (checksum) sobre as diferenças entre versões dos arquivos. O método utilizado para realizar esse checksum é o algoritmo de hash SHA-1 de 40 caracteres.
+					</p>
+					<p>
+						Exemplo de uma hash: 
+						<span id="hash1">dcdb1ed165f630d55e73e37423497031d4761876 </span>
+					</p>
+				</section>
+
+				<section>
+					<h2>Snapshots</h2>
+					<p>
+						Cada hash gerada é <b>única</b>, garantindo a integridade dos arquivos versionados. Ainda, Git <b>armazena apenas snapshots e links</b> para snapshots. Dessa forma, a ferramenta consegue elimina redundâncias de uma forma eficiente. 
+					</p>
+				</section>
+
+				<section>
+					<h2>Commits</h2>
+					<p>
+						Commits são links (ligações ou ponteiros) para snapshots que recebem anotações e são armazenados no histórico do repositório. Para referir-se a um commits, basta usar o SHA-1 do snapshot que ele aponta.
+					</p>
+
+					<aside class="notes">
+						Não mencionei git add ainda...
+						Da pra argumentar que: assim conclui como e o que o git manipula as coisas.
+						Ressaltar que as ferramentas do git são commits e branchs						
+					</aside>
+
 				</section>
 
 
