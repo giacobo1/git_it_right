@@ -566,9 +566,21 @@
 					<p>
 						Em muitas ocasiões, é necessário deletar arquivos. Sendo esse o caso, use:
 						<pre style="text-align:center;"><code>$ git rm "nome"</code></pre>
-						O Arquivo removido mudará do status <b>Não Modificado</b> para <b>Modificado</b>. Sendo necessário adicionar esses mudanças usando os comandos <i>add</i> e <i>commit</i>.
+						O Arquivo removido mudará do status <b>Não Modificado</b> para <b>Modificado</b>. Sendo necessário adicionar esses mudanças usando os comandos <i>add</i> e <i>commit</i>. Com essa configuração, o arquivo é apagado do disco.
 					</p>
 				</section>
+
+				<section>
+					
+				
+					<h2>Removendo Arquivos</h2>
+
+					<p>
+						Uma forma não agressiva de fazer com que o git "esqueça" de um arquivo, ou seja deixe de versioná-lo, é usando:<br>
+						<pre style="text-align:center;"><code>$ git rm --cached "nome"</code></pre>
+						Após executar esse comando, o Git remove o arquivo do <b>histórico</b> e muda o status do arquivo para <b>Modificado</b>. Dessa forma, o arquivo continua no disco, porém não estará mais sob controle de versão após commit.
+					</p>
+				</section>	
 
 				<section>
 					<h2>Renomeando Arquivos</h2>
@@ -648,12 +660,27 @@
 				</section>
 
 
+				<section>
+					<h2>Revertendo o Histórico</h2>
+					<p>
+						Uma forma não distrutíva de reverter o histórico é alcançado usando-se o comando:
+						<pre style="text-align:center;"><code>$ git revert SHA-1</code></pre>
+
+						Git revert, como o nome sugere, reverte o commit especificado pelo SHA-1 ao criar um outro commit registrando as mudanças geradas na reversão. É provável que esse comando gere conflitos.
+					</p>
+
+					<aside class="notes">
+						falar de conflitos (mais adiante)
+					</aside>
+				</section>
+
 
 
 				<section>
-					<h1>Branchs</h1>
-					
+					<h1>Branchs</h1>					
 				</section>
+
+				
 
 
 				<section>
