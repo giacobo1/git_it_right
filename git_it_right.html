@@ -563,6 +563,65 @@
 
 				<section>
 					<h2>Removendo Arquivos</h2>
+					<p>
+						Em muitas ocasiões, é necessário deletar arquivos. Sendo esse o caso, use:
+						<pre style="text-align:center;"><code>$ git rm "nome"</code></pre>
+						O Arquivo removido mudará do status <b>Não Modificado</b> para <b>Modificado</b>. Sendo necessário adicionar esses mudanças usando os comandos <i>add</i> e <i>commit</i>.
+					</p>
+				</section>
+
+				<section>
+					<h2>Renomeando Arquivos</h2>
+					<p>
+						Para renomear arquivos/diretórios ou movê-los de lugar, usa-se o comando:
+						<pre style="text-align:center;"><code>$ git mv "nome-antigo" "nome-novo"</code></pre>
+						Caso o diretório seja o mesmo, Git somente renomeará o objeto. As alterações vão para a staging area e necessitaram, dessa forma, serem commitadas.
+					</p>
+
+					<aside class="notes">
+						Nesse ponto, dá para argumentar que o git parece
+						um mini-sistema de arquivos...
+					</aside>
+
+				</section>
+
+				<section>
+					<h2>Desfazendo Mudanças</h2>
+					<p>
+						É muito comum que erros sejam cometidos durante o preocesso de versionamento. Devido a flexibilidade do Git, há diversas formas de lidar com mudanças ou edições indesejadas.
+					</p>
+				</section>
+
+				<section>
+					<h2>Revertendo Arquivos Modificados</h2>
+					<p>
+						Para reverter mudanças em arquivos que ainda não foram movidos para a staging area, ou seja que saíram de <b>Não Modificados</b> para <b>Modificados</b>, pode-se utilizar o comando:<br>
+						<pre style="text-align:center;"><code>$ git checkout "nome"</code></pre>
+						Assim, as mudanças recém feitas serão revertidas e os arquivos retornaram a versão idêntica à presente no working directory.
+					</p>
+
+
+					<aside class="notes">
+						Lembrar que o checkout é um curinga perigoso
+					</aside>
+
+				</section>
+
+				<section>
+					<h2>Resetando a Staging Area</h2>
+					<p>
+						Caso queiramos desfazer mudanças em arquivos que já estão <b>Prontos para Commit</b>, devemos utilizar o comando:<br>
+						<pre style="text-align:center;"><code>$ git reset HEAD [nome | .]</code></pre>
+
+						Da mesma forma que <i>checkout</i>, os arquivos retornam ao status anterior.
+
+					</p>
+
+					<aside class="notes">
+						Criar slides sobre: commit --amend e stashing e revert
+
+					</aside>
+
 				</section>
 
 
