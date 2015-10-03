@@ -52,7 +52,7 @@
 					<h3>A Succinct Introduction to Git</h3>
 					<p>
 					<small><b>Bruno Giacobo Pinto</b></small><br>
-					<small>bgpinto@inf.ufpel.edu.br</small><br>
+					<small>bgpinto@inf.ufpel.edu.br | github.com/giacobo1</small><br>
 					<small>Universidade Federal de Pelotas (UFPel)</small><br>
 					<small>Laboratory of Ubiquitous and Parallel Systems (LUPS)</small>
 					</p>
@@ -614,15 +614,40 @@
 						<pre style="text-align:center;"><code>$ git reset HEAD [nome | .]</code></pre>
 
 						Da mesma forma que <i>checkout</i>, os arquivos retornam ao status anterior.
-
 					</p>
 
 					<aside class="notes">
 						Criar slides sobre: commit --amend e stashing e revert
 
+						Comentar sobre o HEAD em branchs
+
+						*** PAREI AQUI ****
+
 					</aside>
 
 				</section>
+
+
+				<section>
+					<h2>Revertendo o Histórico</h2>
+
+					<p>
+						Há situações em que medidas drásticas são necessárias para que o repositório seja "estabilizado". Em alguns casos, a reescrita de parte do histórico é uma alternativa.
+					</p>
+
+				</section>
+
+				<section>
+					<h2>Reescrevendo o Histórico</h2>
+					<p>
+						Para realizar essa tarefa "agressiva", utiliza-se a versão hard do comando <i>reset</i>, da seguinte forma:<br>
+						<pre style="text-align:center;"><code>$ git reset --hard SHA-1</code></pre>
+
+						Onde SHA-1 representa o ponto do histórico (commit) até onde se quer retroceder. Use <i>reset</i> com moderação.
+					</p>
+				</section>
+
+
 
 
 				<section>
