@@ -65,6 +65,11 @@
 	border: 0px;
 }
 
+#file-lifecycle {
+	box-shadow: none;
+	border: 0px;
+}
+
 #hash1 {
 	color: #FF6600;
 }

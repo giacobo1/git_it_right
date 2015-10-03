@@ -417,8 +417,152 @@
 
 
 				<section>
-					<h1>Trabalhando Localmente</h1>
+					<h1>Trabalhando Localmente</h1>	
+					<aside class="notes">
+						Lembrar que, no git, quase tudo ocorre localmente. Logo, há um aumento da eficiencia;
+
+					</aside>				
+				</section>
+
+				<section>
+					<h2>Criando um Repositório Local</h2>
+
+					<p>
+						<pre style="text-align:center;"><code>$ git init "repo"</code></pre>
+					</p>
+
+					<p>
+						O comando acima cria um repositório (.git/) dentro do novo diretório chamado "repo". Usando o mesmo comando, porém sem adicionar o nome, cria um repositório no diretório corrente.
+					</p>
+				</section>
+
+				<section>
+					<h2>Criando um Repositório Remoto</h2>
+					<p>
+						<pre style="text-align:center;"><code>$ git init --bare "repo"</code></pre>
+						A principal diferença para um repositório local é que <b>não há staging area</b> em repositórios remotos. Esse tipo de repositório serve para compartilhamento entre colaboradores.
+					</p>
+				</section>
+
+				<section>
+					<h2>Clonando Repositórios</h2>
+
+					<p>
+						Para contribuir com um projeto versionado com o Git e hospedado remotamente, faz-se uma cópia completa (clone) do repositório remoto da seguinte forma:
+					</p>
+
+					<p>
+						<pre style="text-align:center;"><code>$ git clone "URL" [target] </code></pre>
+					</p>
+
+					<p>
+						Se target foir especificado, o repositório clonado será criado dentro da pasta com esse nome, caso contrário Git criará um diretório com o mesmo nome do repositório remoto. 
+					</p>
+
+				</section>
+
+				<section>
+					<h2>Clonando Repositórios</h2>
+					<p>
+						Git suporta diversos protocolos para transferência de dados. Os mais comuns são:
+						<ul>
+							<li>HTTPS: https:// ...</li>
+							<li>SSH: user@server:caminho/do/repo.git</li>
+							<li>Protocolo próprio: git://</li>
+						</ul>
+					</p>
+
+				</section>
+
+				<section>
+					<h2>O Processo de Registro de Arquivos</h2>
+
+					<p>
+						Em um repositório, <b>arquivos</b> podem estar em 4 estados (ou status) distintos em relação ao histórico do projeto, são eles:
+
+						<ul>
+							<li>Não Registrado</li>
+							<li>Não Modificado</li>
+							<li>Modificado</li>
+							<li>Pronto para Commit (staged)</li>
+						</ul>
+					</p>
+
+				</section>
+
+				<section>
+					<h2>O Processo de Registro de Arquivos</h2>
+					<img src="images/file-lifecycle.jpg" height="317" width="500" id="file-lifecycle" >
+				</section>
+
+				<section>
+					<h2>Alterando o "Status" de um Arquivo</h2>
+					<p>
+						Registrar um arquivo, portanto, é o processo de alterar o "status" desse arquivo em relação ao repositório.
+					</p>
+				</section>
+
+				<section>
+					<h2>Alterando o "Status" de um Arquivo</h2>
+					<p>
+						Quando um arquivo é adicionado repositório, seu status é Não Registrado. Para mudar isso, utilizamos o comando:<br>
+						<pre style="text-align:center;"><code>$ git add [nome | . ]</code></pre><br>
+						Dessa forma, o arquivo passa de <b>Não Registrado</b> para <b>Pronto para Commit</b> e reside na <b>staging area</b>. A partir de agora, o Git tem conhecimento do arquivo e rastreará eventuais mudanças futuras que ocorrerem nesse arquivo.	
+					</p>
+				</section>
+				<section>
+					<h2>Alterando o "Status" de um Arquivo</h2>
+					<p>
+						Arquivos já registrados pelo Git possuem status <b>Não Modificado</b>. Caso alguma alteração sobre esses arquivos seja efetuada, eles passarão para o status <b>Modificado</b>. Para que as modificações sejam efetivamente registradas, faz-se necessário utilizar o comando <i>add</i> novamente, o que leva o arquivo para staging area com o status de <b>Pronto para Commit</b>.
+					</p>
+				</section>
+
+				<section>
+					<h2>Ignorando Arquivos</h2>
+					<p>
+						Uma vez que um arquivo torna-se conhecido pelo Git, ou seja, entra em status <b>Não Modificado</b>, ele não será esquecido. Em alguns casos, porém, há arquivos desnecessários que não gostaríamos que fizessem parte do repositório.
+					</p>
+				</section>
 					
+				<section>
+					<h2>Ignorando Arquivos</h2>
+					<p>
+						Git usa um arquivo chamado <i>.gitignore</i> cujo <b>conteúdo</b> descreve padrões a serem ignorados.
+						Exemplo:<br>
+						<pre style="text-align:center;"> <code> *.pdf *.[oa] .*~ *.cpp caminho/xuxa.hs # comentario</code></pre>
+					</p>
+
+					<p>
+						Para que esse arquivo especial tenha efeito, porém, ele deve ser adicionado ao repositório como qualquer outro.
+					</p>
+				</section>
+
+				<section>
+					<h3>Salvando  Arquivos no Histórico do Repositório </h3>
+					<p>
+						Uma vez que os arquivos tenham sido editados e estão em um versão desejável, ou seja <b> Prontos para Commit </b>, eles podem ser de fato registrados no histórico do repositório.
+					</p>
+				</section>
+
+				<section>
+					<h2>Commitando</h2>
+					<p>
+						<pre style="text-align:center"><code>$ git commit -m "Mensagem significativa explicando mudanças"</code></pre>
+						O comando acima salva <b>todos os arquivos que estão na staging area</b> no histórico do repositório. A opção <i>-m</i> é utilizada caso não haja nenhum editor previamente configurado.
+					</p>
+				</section>
+
+				<section>
+					<h2>Avaliando o Estado do Repositório</h2>
+					<p>
+						É de vital importância saber em qual status os arquivos versionados estão. É exatamente essa a função do seguinte comando:<br>
+						<pre style="text-align:center;"><code>$ git status</code></pre>
+						Além de informar em que estado os arquivos se encontram no momento, esse comando fornece informações relativas aos branchs locais e remotos.
+					</p>
+				</section>
+
+				<section>
+					<h2>Removendo Arquivos</h2>
 				</section>
 
 
