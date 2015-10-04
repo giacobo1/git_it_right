@@ -553,6 +553,14 @@
 				</section>
 
 				<section>
+					<h2>Corrigindo um Commit</h2>
+					<p>
+						Caso algum arquivo seja esquecido durante o processo de commit, é possível reescrever o commit mais recente para corrigir o engano. Para isso, após adicionar os arquivos esquecidos na stating area, usa-se:<br>
+						<pre style="text-align:center"><code>$ git commit --amend -m "Esqueceram de mim 313."</code></pre>
+					</p>
+				</section>
+
+				<section>
 					<h2>Avaliando o Estado do Repositório</h2>
 					<p>
 						É de vital importância saber em qual status os arquivos versionados estão. É exatamente essa a função do seguinte comando:<br>
@@ -677,10 +685,30 @@
 
 
 				<section>
-					<h1>Branchs</h1>					
+					<h1>Branchs</h1>
+					<img src="images/git_branching_model.png" height="317" width="599" id="git_branching_model">					
 				</section>
 
-				
+				<section>
+					<h2>O que é um Branch?</h2>
+					<p>
+						Um branch (ou ramo) pode ser visto como um histórico <b>paralelo</b> e <b>isolado</b>do projeto. Apesar de essa funcionalidade estar presente em muitos VCSs, ela tende a ser ineficiente em muitos casos. 
+					</p>
+				</section>
+
+				<section>
+					<h2>Como Branchs Funcionam no Git?</h2>
+					<p>
+						No Git, um branch é, basicamente, uma <b>referência (ou ponteiro) nomeada</b> para um <b>conjunto</b> de um ou mais commits. Logo, em Git, deve sempre haver pelo menos 1 branch e ao menos um commit. Como commits denotam pontos no histórico do projeto, o seu conjunto pode ser entendido como o histórico em si.
+					</p>
+				</section>
+
+
+				<section>
+					<h2>Como Branchs Funcionam no Git?</h2>
+					<img src="images/git_branch.png" height="370" width="572" id="git_branch" >
+
+				</section>
 
 
 				<section>
