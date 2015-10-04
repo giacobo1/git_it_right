@@ -59,10 +59,13 @@
 
 					<aside class="notes">
 							- internet?<br>
+							- Expectativas..<br>	
 							- Git instalado? <br>
 							- Alguém já usou Git antes?<br>
 							- interromper a qualquer momento<br>
 							- Sabem criar/manipular arquivos/diretórios no Linux?
+
+
 					</aside>
 
 					<img src="images/sacomplogo.png" height="156" width="940" id="sacomplogo">
@@ -616,7 +619,7 @@
 					<h2>Revertendo Arquivos Modificados</h2>
 					<p>
 						Para reverter mudanças em arquivos que ainda não foram movidos para a staging area, ou seja que saíram de <b>Não Modificados</b> para <b>Modificados</b>, pode-se utilizar o comando:<br>
-						<pre style="text-align:center;"><code>$ git checkout "nome"</code></pre>
+						<pre style="text-align:center;"><code>$ git checkout -- "nome"</code></pre>
 						Assim, as mudanças recém feitas serão revertidas e os arquivos retornaram a versão idêntica à presente no working directory.
 					</p>
 
@@ -707,7 +710,100 @@
 				<section>
 					<h2>Como Branches Funcionam no Git?</h2>
 					<img src="images/git_branch.png" height="370" width="572" id="git_branch" >
+				</section>
 
+				<section>
+					<h2>Criando Branches no Git</h2>
+					<p>
+						Para criar um branch no Git, basta usar o comando:<br>
+						<pre style="text-align:center;"><code>$ git branch "branch_name"</code></pre>
+
+						Por padrão, o Git cria um branch chamado <i>master</i>. Esse branch, porém, é um branch comum.
+					</p>
+					<!--
+						Falar sobre possibilidade de criar um branch a partir de um commit e o uso do checkout
+
+						tem o --list e tb o filtro de commits;
+					-->
+				</section>
+
+				
+				<section>
+				<h2>Listando Branches Criados</h2>
+				<p>
+					Para listar todos os branches, tanto locais, quanto remotos, use:<br>
+					<pre style="text-align:center;"><code>$ git branch -a</code></pre>
+					Caso deseje listar somente branches locais, omita a opção <i>-a</i> ou use <i>--list</i>. Para visualizar rapidamente os últimos commits em cada branch, adicione a opção <i>-v</i>.
+				</p>	
+				</section>
+
+				<section>
+				<h2>Deletando Branches</h2>
+				<p>
+					Para deletar um branch local, use:<br>
+					<pre style="text-align:center;"><code>$ git branch -d "branch_name"</code></pre>
+
+					Use a opção <i>-D</i> para forçar a remoção do branch, caso necessário.
+				</p>	
+				</section>
+
+
+				<section>
+				<h2>Navegando Entre Commits</h2>
+				<p>
+					Para navegar entre branches e alternar entre históricos, use o comando:<br>
+					<pre style="text-align:center;"><code>$ git checkout "branch_name"</code></pre>
+					Note, pórém, que a stagint area deve estar vazia para que a navegação ocorra, do contrário, Git pede que ações sejam tomadas a esse respeito.
+				</p>	
+				</section>
+
+				<section>
+				<h2>Combinando Branches</h2>
+				<p>
+					Em algum ponto do projeto, branches podem ser combinados. Assim, o progresso alcançado e versionado em um branch pode ser "conhecido" e <b>incorporado</b> por outro branch. A habilidade de combinar branches é extremamente importante em diversas ocasiões.
+				</p>	
+				</section>
+
+				<section>
+				<h2>Combinando Branches no Git</h2>
+				<p>
+					Combinar branches no Git ocorre por meio do comando:<br>
+					<pre style="text-align:center;"><code>$ git merge "branch_name"</code></pre>
+					É importante ressaltar que, para combinar branches, deve-se estar no branch ao qual se quer incorparar as mudanças presentes no branch denotado por "branch_name".
+				</p>	
+				</section>
+
+				<section>
+				<h2>Combinando Branches no Git</h2>
+					<img src="images/git_merge.png" height="256" width="512" id="git_merge">
+
+				</section>
+
+				<section>
+				<h2>Combinando Branches no Git</h2>
+				<p>
+					Quando um <i>merge</i> ocorre, Git simplismente redireciona as referencias (ponteiros) para que os commits possam apontar seus novos sucessores. Note que nenhum branch foi deletado e nenhum commit perdido. Nesse processo, salvo a adição de commits no branch alvo, nada é sobrescrito ou deletado.
+ 				</p>	
+				</section>
+
+				<section>
+				<h2>Mudando a "Base" de um Branch</h2>
+				<p>
+					Há casos em que é necessário sobrescrever totalmente a referência para o qual um branch aponta. Isso é alcançado utilizando-se o comando:<br>
+					<pre style="text-align:center;"><code>$ git rebase "branch_name"</code></pre>
+					De forma análoga a <i>merge</i>, o comando <i>rebase</i> requer que o branch escolhido para ser a nova base do branch "branch_name" a ser integrado seja o branch corrente. Ao contrário do <i>merge</i>, <i>rebase</i> <b>não</b> pode ser desfeito.
+
+				</p>	
+				</section>
+
+				<section>
+				<h2>Mudando a "Base" de um Branch</h2>
+				<img src="images/git_rebase.png" height="305" width="456" id="git_rebase">	
+				</section>
+
+				<section>
+					<h2> Branches <3 </h2>
+					<img src="images/git_meme.png" height="394" width="736" id="git_meme">
 				</section>
 
 
@@ -720,6 +816,13 @@
 				<section>
 					<h1>Conflitos</h1>
 					
+				</section>
+
+				<section>
+				<h2>O que são Conflitos?</h2>
+				<p>
+					Conflitos são divergências no histórico que o Git não consegue resolver sozinho. Normalmente, elas ocorrem em decorrência de um merge ou da manipulação de um mesmo arquivo por colaboradores ou branches diferentes, impedindo que o Git tome alguma decisão à respeito.
+				</p>	
 				</section>
 
 

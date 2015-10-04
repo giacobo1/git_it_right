@@ -60,7 +60,7 @@
 	margin-left: 250px;
 }
 
-#repo-states, #git_branching_model, #git_branch {
+#repo-states, #git_branching_model, #git_branch, #git_merge, #git_rebase, #git_meme {
 	box-shadow: none;
 	border: 0px;
 }
