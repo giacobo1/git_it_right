@@ -727,6 +727,25 @@
 					-->
 				</section>
 
+				<section>
+					<h2>Criando Branches no Git</h2>
+				<p>
+					É possível, e muito útil, criar branches a partir de um commit ou outro branch. O comando a seguir cria um branch a partir da hash de um commit:<br>
+					<pre style="text-align:center;"><code>$ git branch "branch_name" SHA-1</code></pre>
+					
+					Utilizando essa idéia, muitos problemas podem ser resolvidos usando branchs.
+				</p>	
+				</section>
+
+				<section>
+					<h2>Criando Branches no Git</h2>
+				<p>
+					Outra forma de criação possível consistem em criar um branch a partir de outro branch da seguinte forma:<br>
+					<pre style="text-align:center;"><code>$ git checkout -b "new_name" "starting_point"</code></pre>
+
+				</p>	
+				</section>
+
 				
 				<section>
 				<h2>Listando Branches Criados</h2>
@@ -805,13 +824,128 @@
 					<h2> Branches <3 </h2>
 					<img src="images/git_meme.png" height="394" width="736" id="git_meme">
 				</section>
-
-
+			
 				<section>
 					<h1>Trabalhando Remotamente</h1>
 					
 				</section>
 
+				<section>
+				<h2>O que é um Upstream?</h2>
+				<p>
+					Um upstream é um termo usado pelo Git para referenciar um branch ou repositório remoto.
+				</p>	
+				</section>
+
+				<section>
+				<h2>Adicionando Upstreams</h2>
+				<p>
+					Para que exista colaboração, é necessário que o repositório local conheça o upstream com o qual precisa estar sincronizado. Em um repositório clone, uma referência para seu repositório original já vem configurada por padrão. Essa upstream é chamada pelo Git, por convenção, de <i>origin</i>.
+				</p>	
+				</section>
+
+
+				<section>
+				<h2>Adicionando Upstreams</h2>
+				<p>
+					Em um repositório local que não é clone, é possivel adicionar upstreams da seguinte forma:<br>
+					<pre style="text-align:center;"><code>$ git remote add "up_name" "URL"</code></pre>
+
+					Git remote e branches são as principais ferramenta para colaboração.
+
+					<aside class="notes">
+						Lembrar que em times pequenos, pode-se usar ssh e o remoto eh importante	
+					</aside>
+				</p>	
+				</section>
+
+				<section>
+				<h2>Listando Upstreams</h2>
+				<p>
+					Para vizualizar todas as upstreams adicionadas, use:<br>
+					<pre style="text-align:center;"><code>$ git remote</code></pre>
+
+					Para vizualizar todos os branches de um repositório remoto, use: <br>
+					<pre style="text-align:center;"><code>$ git branch -r</code></pre>
+				</p>	
+				</section>
+
+
+				<section>
+				<h2>Removendo Upstreams</h2>
+				<p>
+					Caso seja preciso remover um Upstream, use:<br>
+					<pre style="text-align:center;"><code>$ git remote rm "up_name"</code></pre>
+
+					Note, contudo, que todos os branches relacionados àquela upstream seram apagados.
+				</p>	
+				</section>
+
+				<section>
+				<h2>Branches Remotos e locais</h2>
+				<p>
+					Devido a natureza distribuída do Git, branches de uma upstream <b>não são</b> sincronizados com branches locais, mesmo que o repositório local seja um clone. Essa sincronização deve ser feita manualmente.
+				</p>	
+				</section>
+
+				<section>
+				<h2>Sincronizando Branches</h2>
+				<p>
+					Para que um branch local esteja sincronizado com seu upstream, ele deve ser configurado para <b> rastrear</b> o branch remoto. Isso é feito como segue:<br>
+					<pre style="text-align:center;"><code>$ git branch "local" -t up_name/up_branch</code></pre>
+
+					Assim, um branch chamado "local" é criado e configurado para rastrear (track, por isso -t) o branch "up_branch" <b>situado</b> em usa upstream.
+				</p>
+
+				<aside class="notes">
+					Lembrar que pode ser feito de outras formas (com remote ou checkout), porém essa é a mais segura.
+				</aside>
+
+				</section>
+
+				<section>
+				<h2>Enviando Mudanças para um Upstream</h2>
+				<p>
+					Para atualizar o repositório remoto a partir de um repositório local propriamente configurado, use:<br>
+					<pre style="text-align:center;"><code>$ git push "up_name" "up_branch"</code></pre>
+
+					Note que a staging area do branch corrente deve estar vazia para que um <i>push</i> ocorra. Também, é possível que esse comando ocasione conflitos com a versão presente no repositório remoto.
+				</p>	
+				</section>
+
+				<section>
+				<h2>Atualizando o Repositório Local</h2>
+				<p>
+					Para atualizar o repositório local em relação à sua upstream, pode-se proceder como segue:<br>
+					<pre style="text-align:center;"><code>$ git fetch "up_name"</code></pre>
+
+					O comando <i>fetch</i> baixa todos os dados contidos na upstream que não estão disponíveis no branch local. Os dados atualizados precisam ainda serem integrados no repositório local por meio de um <i>merge</i>.
+				</p>	
+				</section>
+
+				<section>
+				<h2>Atualizando o Repositório Local</h2>
+				<p>
+					Uma forma mais agressiva de atualizar o repositório local ocorre por meio do comando:<br>
+					<pre style="text-align:center;"><code>$ git pull "up_name"</code></pre>
+					Da mesma forma que <i>fetch</i>, esse comando baixa os dados que não constam no repositório local, porém tenta fazer o merge autmaticamente, o que pode ser uma eventual fonte de conflitos.
+				</p>	
+				</section>
+
+				<section>
+				<h2>Visualizando Upstreams</h2>
+				<p>
+					É de vital importância conhecer o estado tanto do repositório local, quanto da upstream corrente. Essa tarefa é atribuída ao comando:<br>
+					<pre style="text-align:center;"><code>$ git remote show "up_name"</code></pre>
+					Dependendo da forma como a upstream estiver configurada, alguma meio de autenticação será requisitado.
+				</p>	
+				</section>
+
+
+				<section>
+				<h1>Analisando Logs</h1>
+				
+				</section>
 
 				<section>
 					<h1>Conflitos</h1>
