@@ -943,9 +943,125 @@
 
 
 				<section>
-				<h1>Analisando Logs</h1>
-				
+					<h1>Analisando Logs</h1>				
 				</section>
+
+				<section>
+				<h2>O Ponteiro HEAD</h2>
+				<p>
+					Pelo fato de Git trata branches como referências para commits, muitas vezes é necessário uma forma de <b>acessar</b> um determinado commit. Para isso, Git conta com uma referência especial chamada HEAD que aponta para o commit mais recente em um branch.
+				</p>	
+				</section>
+
+				<section>
+				<h2>Notação "Tilde"</h2>
+				<p>
+					Para vaizualização de objetos, Git conta com alguns operadores especiais que são combinados, formando uma "sintaxe".
+				</p>	
+				</section>
+
+				<section>
+				<h2>Notação "Tilde"</h2>
+				<p>
+					O operador "~" (til) é usado para acessar commits posteriores partindo de uma referencia base e é normalmente usado com HEAD. Exemplo:<br>
+					<pre style="text-align:center;"><code>$ git show HEAD~3</code></pre>
+
+					Com este comando, todo o <b>conteúdo do terceiro commit anterior</b> ao mais recente (HEAD) é mostrado. 
+				</p>	
+				</section>
+
+				<section>
+				<h2>O operador ":"</h2>
+				<p>
+					Para acessar arquivos referenciados por commits, pode-se combinar a notação tilde com o operador ":". Exemplo:<br>
+					<pre style="text-align:center;"><code>$ git show HEAD~3:main.c</code></pre>
+
+					Nessa configuração, Git mostra como o arquivo "main.c" estava há 3 commits atrás. Essa sintaxe é válida para muitas outras situações de análise de objetos.
+
+				</p>	
+				</section>
+
+				<section>
+				<h2>Branches e a Notação "Tilde"</h2>
+				<p>
+					Como atalho, pode-se usar nomes de branches no lugar de HEAD, como segue:<br>
+					<pre style="text-align:center;"><code>$ git show master~3</code></pre>
+
+					Nessa configuração, master é equivalente a usar HEAD quando master é o branch corrente. Analogamente, o operador ":" pode ser utilizado para inspecionar arquivos.
+				</p>	
+				</section>
+
+				<section>
+				<h2>Culpando os Colegas</h2>
+				<p>
+					Git possibilita avaliar versões de arquivos em um nível fino de detalhes. O comando a seguir mostra exatamente quem alterou uma determinada parte do arquivo e quando.
+
+					<pre style="text-align:center;"><code>$ git blame "main.c"</code></pre> 
+				</p>
+
+				<aside class="notes">
+					Granularidade de análise...
+					Ressaltar que tilda notation vale para tudo
+				</aside>
+
+				</section>
+
+				<section>
+				<h2>Verificando Diferenças</h2>
+				<p>
+					Em muitas situações, é importante avaliar as mudanças ocorridas entre diferentes versões de arquivos. Git possui uma ferramenta perfeita para essa tarefa, usada como segue:<br>
+					<pre style="text-align:center;"><code>$ git diff HEAD~3:main.c HEAD:main.c</code></pre>
+
+					É possível, assim, vizualizar somente as diferenças entre a versão atual de "main.c" em relação à três commits atrás.
+
+				</p>	
+				</section>
+
+				<section>
+				<h2>Verificando diferenças</h2>
+				<p>
+					O comando <i>diff</i> é extremamente poderoso e pode ser empregado de diversas formas. Por exemplo:<br>
+
+					<pre style="text-align:center;"><code>$ git diff main.c @{2.days.ago}</code></pre>
+
+					<pre style="text-align:center;"><code>$ git diff origin/master:main.c master:main.c</code></pre>
+
+					O primeiro exemplo ilustra o uso do <i>diff</i> para extrair diferenças temporais entre versões, já o segundo mostra diferenças de versões em relação a upstream.						
+				</p>	
+				</section>
+
+				<section>
+				<h2>Inspecionando o Histórico</h2>
+				<p>
+					Uma tarefa recorrente para verificar o estado geral de um repositórico é vericar seu histórico. Isso é alcançado utilizando-se o comando:<br>
+					<pre style="text-align:center;"><code>$ git log ["branch_name"]</code></pre>
+
+					Este comando lista todos os <b>commits</b> de um determinado branch e suas respectivas mensagens. O comando <i>log</i> é altamente costumizável, o que o torna indispensável.
+				</p>
+
+				<aside class="notes">
+					Ressaltar que funciona para commits filtrar;
+				</aside>
+
+				</section>
+
+
+				<section>
+				<h2>Inspecionando o Histórico</h2>
+				<p>
+					Git <i>log</i> aceita filtros e expressões regulares, bem como tem suporte para uma notação de intervalo. Exemplo:<br>
+					<pre style="text-align:center;"><code>$ git log HEAD~3...HEAD</code></pre>
+
+					Nessa configuração, o comando lista os três últimos commits (e seus respectivos autores e conteudo) até o commit mais atual. Note que não é aceito espaços entre os pontos e o nome das referências.
+				</p>
+
+					<aside class="notes">
+						Comentar sobre os tipos de filtros/buscas/queries que podem ser feitos sobre git log;
+					</aside>	
+				</section>
+
+
+
 
 				<section>
 					<h1>Conflitos</h1>
@@ -966,14 +1082,17 @@
 				</section>
 
 
-				<section>
-					<h1>Analisando Logs</h1>
-					
-				</section>
-
 
 				<section>
-					<h1>Referências</h1>
+					<h2>Referências</h2>
+					<p>
+					<ul>
+						<li>
+						Chacon, Scott (2009).<a href="https://progit2.s3.amazonaws.com/en/2015-10-01-98c40/progit-en.848.pdf"><i> Pro Git. </i></a>Aress<BR> 
+						</li>
+						<li>Git manpages</li>
+					</ul>
+					</p>
 					
 				</section>
 
