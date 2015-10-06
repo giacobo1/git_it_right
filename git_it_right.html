@@ -1077,10 +1077,105 @@
 
 
 				<section>
-					<h1>Workflows</h1>
-					
+					<h1>Workflows</h1>					
 				</section>
 
+				<section>
+				<h2>O que é um Workflow?</h2>
+				<p>
+					Um workflow é um <b>conjunto de políticas e convenções</b> para a utilização do repositório de modo a <b>prevenir conflitos</b> e <b>separar</b> branches de acordo com suas funções.
+				</p>	
+				</section>
+
+				<section>
+				<h2>Implementação de Workflows</h2>
+				<p>
+					Por proporcionar isolamento, normalmente, branches possibilitam uma forma simples de implementar workflows. Dessa forma, branches são nomeados de acordo com sua funcionalidade e tempo de vida. 
+				</p>	
+				</section>
+
+				<section>
+				<h2>Convenções</h2>
+				<p>
+					É convenção, por exemplo, usar o branch master para conter a versão mais estável do projeto. Um branch de desenvolvimento, chamado dev, é responsável pelas versões ainda sob testes que serão integradas na versão estável. 
+				</p>	
+				</section>
+
+				<section>
+				<h2>Convenções</h2>
+				<p>
+					Outra convenção útil é utilizar branches de forma a resolver um problema ou testar uma funcionalidade e, posteriormente, integrá-lo com o branch de desenvolvimento.
+				</p>	
+				</section>
+
+
+				<section>
+				<h2>Workflow Centralizado</h2>
+				<p>
+					Essa estratégia conta com um servidor central que hospeda um único repositório remoto que é clonado por todos os colaboradores.
+				</p>	
+				</section>
+
+				<section>
+				<h2>Workflow Centralizado</h2>
+				<p>
+					É a estratégia mais comum empregada em times pequenos e presente na maioria dos "hubs".
+				</p>	
+				</section>
+
+				<section>
+				<h2>Workflow Centralizado</h2>
+				<p>
+					<img src="images/centralized_workflow.jpg" height="159" width="318" id="centralized_workflow">
+				</p>	
+				</section>
+
+				<section>
+				<h2>Workflow Integrador</h2>
+				<p>
+					Nessa configuração, existe um repositório público e remoto que é eleito oficial. Cada colaborador nesse projeto possui dois clones, um público e outro privado.  
+				</p>	
+				</section>
+
+				<section>
+				<h2>Workflow Integrador</h2>
+				<p>
+					Cada colaborador trabalha em seu repositório local e privado. Quando é necessário enviar mudanças para o repositório oficial, o colaborador atualiza seu repositório público e notifica o administrador do repositório oficial para que o adicione como remoto. Assim, as mudanças desse colaborador podem ser testadas e eventualmente integradas no repositório oficial.
+				</p>	
+				</section>
+
+
+				<section>
+				<h2>Workflow Integrador</h2>
+				<p>
+					<img src="images/integrator_workflow.png" height="202" width="500" id="integrator_workflow">
+				</p>	
+				</section>
+
+				<section>
+				<h2>Workflow Ditador e Tenentes</h2>
+				<p>
+					Uma possível variação da idéia de integrador é o Workflow ditador e tenentes. Dois níveis de hierarquia são adicionados nesse caso. 
+				</p>	
+				</section>
+
+				<section>
+				<h2>Workflow Ditador e Tenentes</h2>
+				<p>
+					Tenentes funcionam como integradores que interagem com desenvolvedores, enquanto um ditador integra tudo que foi selecionado pelos tenentes para compor um repositório oficial.
+				</p>
+
+				<aside class="notes">
+					Kernel linux	
+				</aside>	
+				</section>
+
+				<section>
+				<h2>Workflow Ditador e Tenentes</h2>
+				<p>
+					<img src="images/benevolent-dictator.png" height="615" width="1194" id="benevolent-dictator">
+				</p>	
+				</section>
 
 
 				<section>

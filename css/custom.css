@@ -60,7 +60,16 @@
 	margin-left: 250px;
 }
 
-#repo-states, #git_branching_model, #git_branch, #git_merge, #git_rebase, #git_meme {
+#benevolent-dictator {
+	box-shadow: none;
+	border: 0px;
+	height: auto;
+	width: auto;
+	max-height: 315px;
+	max-width: 694px;
+}
+
+#repo-states, #git_branching_model, #git_branch, #git_merge, #git_rebase, #git_meme, #integrator_workflow, #centralized_workflow {
 	box-shadow: none;
 	border: 0px;
 }
